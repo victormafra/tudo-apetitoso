@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'receita',
     component: ReceitaFormComponent
+  },
+  {
+    path: 'receita/:id',
+    component: ReceitaFormComponent
   }
 ];
 

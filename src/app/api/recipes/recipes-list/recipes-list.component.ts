@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
-import { CategoriasHelperService } from '../services/categorias-helper.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tda-recipes-list',
@@ -8,14 +8,19 @@ import { CategoriasHelperService } from '../services/categorias-helper.service';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
-  recipes: Array<{title: string, category: number, excerpt: string}> = [];
+  recipes: Array<{id: number, title: string, category: number, excerpt: string}> = [];
 
   constructor(
-    protected $recipeService: RecipeService
+    protected $recipeService: RecipeService,
+    protected $router: Router
   ) { }
 
   ngOnInit() {
     this.recipes = this.$recipeService.getRecipes();
+  }
+
+  redirecionarParaReceita(id: number) {
+    this.$router.navigate(['receita', id]);
   }
 
 }
