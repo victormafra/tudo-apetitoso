@@ -8,37 +8,48 @@ export class RecipeService {
   constructor() { }
 
   getRecipes(): Array<any> {
-    // excerpt
     return [
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       },
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       },
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       },
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       },
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       },
       {
-        excerpt: 'Uma receita deliciosa de se fazer'
-      },
-      {
-        excerpt: 'Uma receita deliciosa de se fazer'
-      },
-      {
-        excerpt: 'Uma receita deliciosa de se fazer'
-      },
-      {
-        excerpt: 'Uma receita deliciosa de se fazer'
-      },
-      {
-        excerpt: 'Uma receita deliciosa de se fazer'
+        title: 'Bife à parmegiana',
+        excerpt: 'Uma receita deliciosa de se fazer',
+        category: 1,
+        serves: 2,
+        authorId: '1',
       }
     ];
   }

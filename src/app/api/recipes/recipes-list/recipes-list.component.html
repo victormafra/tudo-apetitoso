@@ -3,8 +3,8 @@
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Bife à parmegiana</mat-card-title>
-        <mat-card-subtitle>Lanche</mat-card-subtitle>
+        <mat-card-title>{{recipe.title}}</mat-card-title>
+        <mat-card-subtitle>{{recipe.category}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="https://img.itdg.com.br/tdg/images/recipes/000/009/125/282170/282170_original.jpg?mode=crop&width=710&height=400" alt="Foto de um bife à parmegiana">
       <mat-card-content>
@@ -13,8 +13,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button><i class="material-icons">favorite</i></button>
-        <button mat-button>VER RECEITA</button>
+        <button mat-raised-button>VER RECEITA</button>
       </mat-card-actions>
     </mat-card>
   </div>

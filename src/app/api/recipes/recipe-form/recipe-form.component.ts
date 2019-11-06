@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CategoriasEnum } from '../enums/categorias.enum';
+import { CategoriasHelperService, ICategoriasEnum } from '../services/categorias-helper.service';
 
 @Component({
   selector: 'tda-recipe-form',
@@ -9,10 +9,11 @@ import { CategoriasEnum } from '../enums/categorias.enum';
 })
 export class RecipeFormComponent implements OnInit {
   recipeForm: FormGroup;
-  categorias: Array<{value: string, name: string}> = [];
+  categorias: Array<ICategoriasEnum> = [];
 
   constructor(
-    protected $formBuilder: FormBuilder
+    protected $formBuilder: FormBuilder,
+    protected $categoriasHelperService: CategoriasHelperService
   ) { }
 
   ngOnInit() {
@@ -33,10 +34,7 @@ export class RecipeFormComponent implements OnInit {
   }
 
   loadCategorias(): void {
-    const enumValues = Object.keys(CategoriasEnum);
-    this.categorias = enumValues.slice(0, enumValues.length).map(name => {
-      return {value: CategoriasEnum[name], name};
-    });
+    this.categorias = this.$categoriasHelperService.getCategoriasList();
   }
 
   enviarFormulario(): void {

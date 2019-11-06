@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
+import { CategoriasHelperService } from '../services/categorias-helper.service';
 
 @Component({
   selector: 'tda-recipes-list',
@@ -7,7 +8,7 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
-  recipes: Array<{excerpt: string}> = [];
+  recipes: Array<{title: string, category: number, excerpt: string}> = [];
 
   constructor(
     protected $recipeService: RecipeService
