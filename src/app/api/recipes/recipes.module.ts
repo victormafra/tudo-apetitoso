@@ -1,15 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
-import { MatCardModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [RecipesListComponent],
+  declarations: [
+    RecipesListComponent,
+    RecipeFormComponent
+  ],
   imports: [
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
-  exports: [RecipesListComponent]
+  exports: [
+    RecipesListComponent,
+    RecipeFormComponent
+  ]
 })
 export class RecipesModule { }

@@ -1,0 +1,28 @@
+<form class="form" [formGroup]="recipeForm" (submit)="enviarFormulario()">
+  <mat-form-field class="full-width">
+    <input matInput formControlName="titulo" type="text" placeholder="Título">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Categoria</mat-label>
+    <mat-select formControlName="categoria">
+      <mat-option *ngFor="let categoria of categorias" [value]="categoria.value">
+        {{categoria.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <input matInput formControlName="tempoPreparo" type="number" placeholder="Tempo de Preparo (em minutos)">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput formControlName="igredientes" type="text" placeholder="Igredientes"> 
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput formControlName="preparo" type="text" placeholder="Preparo"> 
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Criar</button>
+</form>

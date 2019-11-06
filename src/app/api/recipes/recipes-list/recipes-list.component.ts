@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'tda-recipes-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
+  recipes: Array<{excerpt: string}> = [];
 
-  constructor() { }
+  constructor(
+    protected $recipeService: RecipeService
+  ) { }
 
   ngOnInit() {
+    this.recipes = this.$recipeService.getRecipes();
   }
 
 }
