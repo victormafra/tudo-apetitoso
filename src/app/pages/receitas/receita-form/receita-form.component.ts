@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'tda-receita-form',
@@ -11,7 +11,8 @@ export class ReceitaFormComponent implements OnInit {
   title = 'Nova Receita';
 
   constructor(
-    protected $activatedRoute: ActivatedRoute
+    protected $activatedRoute: ActivatedRoute,
+    protected $router: Router
   ) { }
 
   ngOnInit() {
@@ -24,6 +25,10 @@ export class ReceitaFormComponent implements OnInit {
       this.id = params.id;
       this.title = 'Editar Receita ' + this.id.toString();
     }
+  }
+
+  navegarParaHome(): void {
+    this.$router.navigate(['']);
   }
 
 }

@@ -5,6 +5,7 @@ import { ReceitasRoutingModule } from './receitas-routing.module';
 import { ReceitasPageComponent } from './receitas-page/receitas-page.component';
 import { RecipesModule } from '../../api/recipes/recipes.module';
 import { ReceitaFormComponent } from './receita-form/receita-form.component';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ReceitaFormComponent } from './receita-form/receita-form.component';
   imports: [
     CommonModule,
     ReceitasRoutingModule,
-    RecipesModule
+    RecipesModule,
+    MatButtonModule
   ]
 })
 export class ReceitasModule { }
