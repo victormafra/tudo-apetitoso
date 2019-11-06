@@ -12,6 +12,7 @@ export class RecipeFormComponent implements OnInit {
 
   recipeForm: FormGroup;
   categorias: Array<ICategoriasEnum> = [];
+  listaIngredientes: Array<string> = ['Ovo', 'Óleo'];
 
   constructor(
     protected $formBuilder: FormBuilder,
@@ -31,7 +32,8 @@ export class RecipeFormComponent implements OnInit {
       tempoPreparo: [],
       rendimento: [],
       criador: [],
-      igredientes: [],
+      ingredientes: [],
+      quantidadeIngredientes: [],
       preparo: [],
     });
   }

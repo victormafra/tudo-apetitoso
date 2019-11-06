@@ -16,9 +16,23 @@
     <input matInput formControlName="tempoPreparo" type="number" placeholder="Tempo de Preparo (em minutos)">
   </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <input matInput formControlName="igredientes" type="text" placeholder="Igredientes"> 
-  </mat-form-field>
+  <div class="full-width">
+    <mat-form-field>
+      <input matInput [matAutocomplete]="auto" formControlName="ingredientes" type="text" placeholder="ingredientes">
+    </mat-form-field>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let ingrediente of listaIngredientes; let i = index" [value]="i">
+        <span>{{ingrediente}}</span>
+      </mat-option>
+    </mat-autocomplete>
+    
+    <mat-form-field>
+      <input matInput formControlName="quantidadeIngredientes" type="number" placeholder="Quantidade">
+    </mat-form-field>
+
+    <button mat-button>Adicionar</button>
+  </div>
 
   <mat-form-field class="full-width">
     <input matInput formControlName="preparo" type="text" placeholder="Preparo"> 

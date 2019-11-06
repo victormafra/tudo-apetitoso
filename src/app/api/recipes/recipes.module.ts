@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
-import { MatCardModule, MatButtonModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatInputModule, MatSelectModule, MatIconModule, MatAutocompleteModule } from '@angular/material';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -17,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   exports: [
     RecipesListComponent,
