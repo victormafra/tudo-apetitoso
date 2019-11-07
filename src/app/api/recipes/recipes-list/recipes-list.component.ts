@@ -16,11 +16,16 @@ export class RecipesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.recipes = this.$recipeService.getRecipes();
+    this.getRecipes();
   }
 
   redirecionarParaReceita(id: number) {
     this.$router.navigate(['receita', id]);
+  }
+
+  async getRecipes() {
+    const recipes = await this.$recipeService.getRecipes();
+    this.recipes = recipes.result.items;
   }
 
 }

@@ -1,62 +1,17 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { first } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
+  url = 'http://univille.maxandriani.art.br/api/recipes';
 
-  constructor() { }
+  constructor(
+    protected $httpClient: HttpClient
+  ) { }
 
-  getRecipes(): Array<any> {
-    return [
-      {
-        id: 0,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      },
-      {
-        id: 1,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      },
-      {
-        id: 2,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      },
-      {
-        id: 3,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      },
-      {
-        id: 4,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      },
-      {
-        id: 5,
-        title: 'Bife à parmegiana',
-        excerpt: 'Uma receita deliciosa de se fazer',
-        category: 1,
-        serves: 2,
-        authorId: '1',
-      }
-    ];
+  getRecipes(): Promise<any> {
+    return this.$httpClient.get(this.url).pipe(first()).toPromise();
   }
 }

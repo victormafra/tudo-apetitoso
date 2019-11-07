@@ -4,6 +4,8 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { MatCardModule, MatButtonModule, MatInputModule, MatSelectModule, MatIconModule, MatAutocompleteModule } from '@angular/material';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RecipeService } from './services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   exports: [
     RecipesListComponent,
     RecipeFormComponent
+  ],
+  providers: [
+    RecipeService
   ]
 })
 export class RecipesModule { }
