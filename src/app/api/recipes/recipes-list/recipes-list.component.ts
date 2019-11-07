@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
-  recipes: Array<{id: number, title: string, category: number, excerpt: string}> = [];
+  recipes: Array<{id: number, title: string, category: number, excerpt: string, pictureUri: string}> = [];
 
   constructor(
     protected $recipeService: RecipeService,

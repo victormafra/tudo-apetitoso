@@ -6,7 +6,7 @@
         <mat-card-title>{{recipe.title}}</mat-card-title>
         <mat-card-subtitle>{{recipe.category}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="https://img.itdg.com.br/tdg/images/recipes/000/009/125/282170/282170_original.jpg?mode=crop&width=710&height=400" alt="Foto de um bife à parmegiana">
+      <img mat-card-image [src]="recipe.pictureUri" alt="Foto de um bife à parmegiana">
       <mat-card-content>
         <p>
           {{recipe.excerpt}}
