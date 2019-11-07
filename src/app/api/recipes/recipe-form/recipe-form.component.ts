@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoriasHelperService, ICategoriasEnum } from '../services/categorias-helper.service';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'tda-recipe-form',
@@ -16,7 +17,8 @@ export class RecipeFormComponent implements OnInit {
 
   constructor(
     protected $formBuilder: FormBuilder,
-    protected $categoriasHelperService: CategoriasHelperService
+    protected $categoriasHelperService: CategoriasHelperService,
+    protected $recipeService: RecipeService
   ) { }
 
   ngOnInit() {
@@ -27,10 +29,10 @@ export class RecipeFormComponent implements OnInit {
 
   initializeForm(): void {
     this.recipeForm = this.$formBuilder.group({
-      titulo: ['', Validators.required],
-      categoria: [],
-      tempoPreparo: [],
-      rendimento: [],
+      title: ['', Validators.required],
+      category: [],
+      preparationTime: [],
+      serves: [],
       criador: [],
       ingredientes: [],
       quantidadeIngredientes: [],
@@ -42,9 +44,10 @@ export class RecipeFormComponent implements OnInit {
     this.categorias = this.$categoriasHelperService.getCategoriasList();
   }
 
-  loadForm(): void {
+  async loadForm() {
     if (typeof this.id !== 'undefined') {
-      // Buscar formulário da API
+      const recipe = await this.$recipeService.getRecipe(this.id);
+      this.recipeForm.patchValue(recipe.result);
     }
   }
 

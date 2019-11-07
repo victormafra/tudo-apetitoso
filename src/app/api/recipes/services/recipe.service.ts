@@ -14,4 +14,8 @@ export class RecipeService {
   getRecipes(): Promise<any> {
     return this.$httpClient.get(this.url).pipe(first()).toPromise();
   }
+
+  getRecipe(id: number): Promise<any> {
+    return this.$httpClient.get(this.url + '/' + id).pipe(first()).toPromise();
+  }
 }

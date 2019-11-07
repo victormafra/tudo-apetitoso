@@ -1,11 +1,14 @@
+<pre>
+{{recipeForm.value | json}}
+</pre>
 <form class="form" [formGroup]="recipeForm" (submit)="enviarFormulario()">
   <mat-form-field class="full-width">
-    <input matInput formControlName="titulo" type="text" placeholder="Título">
+    <input matInput formControlName="title" type="text" placeholder="Título">
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Categoria</mat-label>
-    <mat-select formControlName="categoria">
+    <mat-select formControlName="category">
       <mat-option *ngFor="let categoria of categorias" [value]="categoria.categoria">
         {{categoria.label}}
       </mat-option>
@@ -13,7 +16,11 @@
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <input matInput formControlName="tempoPreparo" type="number" placeholder="Tempo de Preparo (em minutos)">
+    <input matInput formControlName="preparationTime" type="number" placeholder="Tempo de Preparo (em minutos)">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput formControlName="serves" type="number" placeholder="Rendimento">
   </mat-form-field>
 
   <div class="full-width">
