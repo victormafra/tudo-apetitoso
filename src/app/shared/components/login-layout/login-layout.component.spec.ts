@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReceitaFormComponent } from './receita-form.component';
+import { LoginLayoutComponent } from './login-layout.component';
 
-describe('ReceitaFormComponent', () => {
-  let component: ReceitaFormComponent;
-  let fixture: ComponentFixture<ReceitaFormComponent>;
+describe('LoginLayoutComponent', () => {
+  let component: LoginLayoutComponent;
+  let fixture: ComponentFixture<LoginLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReceitaFormComponent ]
+      declarations: [ LoginLayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReceitaFormComponent);
+    fixture = TestBed.createComponent(LoginLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ReceitaDetalhesPageComponent } from './receita-detalhes-page/receita-detalhes-page.component';
+import { ReceitaRegisterPageComponent } from './receita-register-page/receita-register-page.component';
 import { ReceitasPageComponent } from './receitas-page/receitas-page.component';
-import { ReceitaFormComponent } from './receita-form/receita-form.component';
+
 
 const routes: Routes = [
   {
@@ -9,12 +11,16 @@ const routes: Routes = [
     component: ReceitasPageComponent
   },
   {
-    path: 'receita',
-    component: ReceitaFormComponent
+    path: ':id',
+    component: ReceitaDetalhesPageComponent
   },
   {
-    path: 'receita/:id',
-    component: ReceitaFormComponent
+    path: ':id/edit',
+    component: ReceitaRegisterPageComponent
+  },
+  {
+    path: 'new',
+    component: ReceitaRegisterPageComponent
   }
 ];
 

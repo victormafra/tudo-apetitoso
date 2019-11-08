@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginPageComponent } from './login-page/login-page.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: async () => (await import('./receitas/receitas.module')).ReceitasModule
+    component: LoginPageComponent
   }
 ];
 
@@ -12,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule { }
+export class LoginRoutingModule { }
